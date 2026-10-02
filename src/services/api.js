@@ -1,6 +1,10 @@
-const API_BASE = '/api';
+const rawApiBase = import.meta.env.VITE_API_URL || '';
+export const API_BASE = rawApiBase ? `${rawApiBase.replace(/\/$/, '')}/api` : '/api';
 
 export const apiService = {
+  getBaseUrl() {
+    return API_BASE;
+  },
   // Fetch invitation by slug or id
   async getInvitation(slug = 'ananya-kabir') {
     try {

@@ -40,7 +40,8 @@ export default function AdminDashboard({ invitation }) {
       setRsvps(rsvpsData);
       setStats(statsData);
 
-      fetch('/api/leads')
+      const base = apiService.getBaseUrl ? apiService.getBaseUrl() : '/api';
+      fetch(`${base}/leads`)
         .then(r => r.json())
         .then(d => setLeads(Array.isArray(d) ? d : []))
         .catch(() => {});
@@ -51,7 +52,8 @@ export default function AdminDashboard({ invitation }) {
 
   const handleDownloadCsv = () => {
     weddingAudio.playButtonClick();
-    window.open(`/api/rsvps/export/csv?invitationId=${invitation?.id || 'ananya-kabir-2026'}`, '_blank');
+    const base = apiService.getBaseUrl ? apiService.getBaseUrl() : '/api';
+    window.open(`${base}/rsvps/export/csv?invitationId=${invitation?.id || 'ananya-kabir-2026'}`, '_blank');
   };
 
   const handleGeneratePersonalizedLink = () => {
