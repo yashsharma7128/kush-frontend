@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FAF6F0] text-[#4A0F1E] antialiased selection:bg-[#6B1D2F] selection:text-[#FAF6F0];
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Luxury Royal Gold Gradient & Shimmer Effects */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #C59B4E 0%,
+    #E8D5A3 25%,
+    #C59B4E 50%,
+    #E8D5A3 75%,
+    #C59B4E 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C59B4E 0%, #D4AF37 50%, #B38733 100%);
+}
+
+.maroon-gradient-bg {
+  background: linear-gradient(135deg, #6B1D2F 0%, #541221 60%, #3B0B16 100%);
+}
+
+/* Jharokha Arch Border Effect */
+.jharokha-arch {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+/* Custom smooth royal scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C59B4E;
+  border-radius: 9999px;
+  border: 1px solid #E6D5BD;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6B1D2F;
+}
