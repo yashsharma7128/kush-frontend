@@ -1,5 +1,5 @@
-const rawApiBase = import.meta.env.VITE_API_URL || '';
-export const API_BASE = rawApiBase ? `${rawApiBase.replace(/\/$/, '')}/api` : '/api';
+const rawApiBase = import.meta.env.VITE_API_URL || 'https://kush-backend.onrender.com';
+export const API_BASE = `${rawApiBase.replace(/\/$/, '')}/api`;
 
 export const apiService = {
   getBaseUrl() {
